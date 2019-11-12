@@ -1,6 +1,6 @@
 package de.hska.iwi.vslab.Core_Category;
 
-import de.hska.iwi.vslab.Core_Category.Interfaces.CategoryRepository;
+import de.hska.iwi.vslab.Core_Category.Interfaces.CategoryDB_Repo;
 import de.hska.iwi.vslab.Core_Category.Models.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class CoreCategoryApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(CategoryRepository repository) {
+	public CommandLineRunner demo(CategoryDB_Repo repository) {
 		return (args) -> {
 			// save a few categories
 			repository.save(new Category("Obst"));
