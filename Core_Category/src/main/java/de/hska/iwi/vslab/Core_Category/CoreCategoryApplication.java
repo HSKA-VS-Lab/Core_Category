@@ -26,6 +26,8 @@ public class CoreCategoryApplication {
 			repository.save(new Category("Gemüse"));
 			repository.save(new Category("Süßigkeiten"));
 
+
+
 			// fetch all categories
 			log.info("Category found with findAll():");
 			log.info("-------------------------------");
@@ -50,7 +52,14 @@ public class CoreCategoryApplication {
 			// for (Category category : repository.findByName("Obst")) {
 			// 	log.info(category.toString());
 			// }
-			log.info("");
+
+			// fetch all categories
+			log.info("Categories found with findAll():");
+			log.info("--------------------------------------------");
+			repository.findAll().forEach(cat -> {
+				log.info(cat.toString());
+			});
+
 		};
 	}
 
