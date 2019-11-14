@@ -1,6 +1,6 @@
 package de.hska.iwi.vslab.Core_Category;
 
-import de.hska.iwi.vslab.Core_Category.Interfaces.CategoryDB_Repo;
+import de.hska.iwi.vslab.Core_Category.Interfaces.CategoryRepository;
 import de.hska.iwi.vslab.Core_Category.Models.Category;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class CoreCategoryApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(CategoryDB_Repo repository) {
+	public CommandLineRunner demo(CategoryRepository repository) {
 		return (args) -> {
 			// save a few categories
 			repository.save(new Category("Obst"));
@@ -46,9 +46,7 @@ public class CoreCategoryApplication {
 			// fetch categories by last name
 			log.info("Category found with findByName('Obst'):");
 			log.info("--------------------------------------------");
-			repository.findByName("Obst").forEach(obst -> {
-				log.info(obst.toString());
-			});
+			log.info(repository.findByName("Obst").toString());
 			// for (Category category : repository.findByName("Obst")) {
 			// 	log.info(category.toString());
 			// }
