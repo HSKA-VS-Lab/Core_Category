@@ -24,11 +24,6 @@ public class CategoryController {
         return categoryService.getCategory(id);
     }
 
-    /*@GetMapping("/category/{name}")
-    public Category getCategory(@PathVariable String name) {
-        return categoryService.getCategory(name);
-    }*/
-
     @PostMapping("/category")
     public void addCategory(@RequestBody Category category) {
         categoryService.addCategory(category);
@@ -43,11 +38,6 @@ public class CategoryController {
     public long deleteCategory(@PathVariable int id){
         return categoryService.deleteCategory(id);
     }
-
-    /*@DeleteMapping("/category/{name}")
-    public long deleteCategory(@PathVariable String name){
-        return categoryService.deleteCategory(name);
-    }*/
 
     @DeleteMapping("/category")
     public long deleteCategory(){
