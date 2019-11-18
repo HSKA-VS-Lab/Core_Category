@@ -15,7 +15,7 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/category")
-    public List getAllCategories() {
+    public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 
@@ -35,12 +35,12 @@ public class CategoryController {
     }
 
     @DeleteMapping("/category/{id}")
-    public long deleteCategory(@PathVariable int id){
-        return categoryService.deleteCategory(id);
+    public void deleteCategory(@PathVariable int id){
+        categoryService.deleteCategory(id);
     }
 
     @DeleteMapping("/category")
-    public long deleteCategory(){
-        return categoryService.deleteAllCategories();
+    public void deleteCategory(){
+         categoryService.deleteAllCategories();
     }
 }
