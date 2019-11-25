@@ -9,11 +9,17 @@ import javax.persistence.Id;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
 
-    protected Category() {}
+    protected Category() {
+    }
+
+    public Category(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Category(String name) {
         this.name = name;
@@ -21,9 +27,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return String.format(
-                "Customer[id=%d, name='%s']",
-                id, name);
+        return String.format("Category[id=%d, name='%s']", id, name);
     }
 
     public int getId() {

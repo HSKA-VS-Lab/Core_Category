@@ -12,14 +12,14 @@ import java.util.List;
 
 @RestController
 public class CategoryController {
-    
+
     private static final Logger log = LoggerFactory.getLogger(CategoryController.class);
 
     @Autowired
     private CategoryService categoryService;
 
     @GetMapping("/category")
-    public List<Category> getAllCategories() {
+    public Category[] getAllCategories() {
         log.info("getAllCategories() was called");
         return categoryService.getAllCategories();
     }
@@ -30,26 +30,26 @@ public class CategoryController {
         return categoryService.getCategory(id);
     }
 
-    @PostMapping("/category")
+    @PostMapping(path = "/category", consumes = "application/json")
     public void addCategory(@RequestBody Category category) {
         log.info("addCategory(Category) was called");
         categoryService.addCategory(category);
     }
 
-    @PutMapping("/category")
+    @PutMapping(path = "/category", consumes = "application/json")
     public void updateCategory(@RequestBody Category category) {
         log.info("updateCategory(Category) was called");
         categoryService.updateCategory(category);
     }
 
     @DeleteMapping("/category/{id}")
-    public void deleteCategory(@PathVariable int id){
+    public void deleteCategory(@PathVariable int id) {
         log.info("deleteCategory(id) was called");
         categoryService.deleteCategory(id);
     }
 
     @DeleteMapping("/category")
-    public void deleteCategory(){
+    public void deleteCategory() {
         log.info("deleteCategory() was called");
         categoryService.deleteAllCategories();
     }
