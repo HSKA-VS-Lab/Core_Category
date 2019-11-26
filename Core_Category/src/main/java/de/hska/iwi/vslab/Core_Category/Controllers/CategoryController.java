@@ -36,8 +36,8 @@ public class CategoryController {
         categoryService.addCategory(category);
     }
 
-    @PutMapping(path = "/category", consumes = "application/json")
-    public void updateCategory(@RequestBody Category category) {
+    @PutMapping(path = "/category/{id}", consumes = "application/json")
+    public void updateCategory(@PathVariable int id, @RequestBody Category category) {
         log.info("updateCategory(Category) was called");
         categoryService.updateCategory(category);
     }

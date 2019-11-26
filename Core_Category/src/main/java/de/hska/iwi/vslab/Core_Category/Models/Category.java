@@ -16,7 +16,7 @@ public class Category {
     protected Category() {
     }
 
-    public Category(int id, String name) {
+    public Category(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -30,7 +30,7 @@ public class Category {
         return String.format("Category[id=%d, name='%s']", id, name);
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
