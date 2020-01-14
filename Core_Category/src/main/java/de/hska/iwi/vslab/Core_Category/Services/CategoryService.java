@@ -37,7 +37,6 @@ public class CategoryService {
     }
 
     public void updateCategory(Category category) {
-        System.out.println("UPDATED CATEGORY!!!" + category);
         categoryRepo.save(category);
     }
 
