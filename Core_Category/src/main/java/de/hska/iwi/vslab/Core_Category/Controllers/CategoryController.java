@@ -7,11 +7,13 @@ import de.hska.iwi.vslab.Core_Category.Services.CategoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@EnableCircuitBreaker
 public class CategoryController {
 
     private static final Logger log = LoggerFactory.getLogger(CategoryController.class);
